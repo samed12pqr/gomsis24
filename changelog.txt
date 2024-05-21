@@ -1,0 +1,4 @@
+29 Nisan: Nexys Video'nun demo testi yapıldı. HDMI Pass Through ve renk patterni oluşturma denendi ve başarıyla sonuç alındı. 
+5 Mayıs: Hazır IP'ler kullanılarak HDMI Pass Through uygulaması denendi. Bitstream hatası alındı.
+14 Mayıs: Saat yönetim bloğu MMCM'den PLL'e geçirildi ve hatalar kaldırılıp başarılı şekilde bitstream yapıldı.
+20 Mayıs: Tasarıma hdmi_rx_txen portu eklendi.
