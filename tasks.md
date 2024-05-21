@@ -1,27 +1,29 @@
-# gomsis24
-FPGA'ler ile HDMI Görüntü İşleme Projesi
+# İş Paketleri
 
-Salih Yıldız 200207014
+## Yapılacaklar
 
-Nexys Video FPGA kartına HDMI In portundan gelen video sinyalleri FPGA'de PL kullanılarak binarize edilecek ve HDMI Out portundan harici bir monitöre gönderilecektir.
+| Başlık         | Maddeler                                                                 |
+|----------------|--------------------------------------------------------------------------|
+| Farklı Kaynaklardan Giriş Alabilme ve Farklı Kaynaklara Çıkış Verebilme   | - Sistem kamera veya bilgisayar gibi farklı kaynaklar tarafından üretilen video sinyallerini alabilir. <br> - Sistem doğrudan HDMI girişine sahip bir ekrana bağlanılabileceği gibi dönüştürücü ile farklı girişlere sahip ekranlara da bağlanabilir.                                  |
+| Esnek Görüntüleme Seçenekleri    | - Sistem kaynaktan gelen görüntüyü doğrudan harici ekranda gösterebilir. <br> - Sistem kaynaktan gelen görüntüyü binarize edip harici ekranda gösterebilir.                                |
+| Custom IP Tasarımı    | - Sistem görüntüyü binarize edecektir. <br> - Sistem OTSU algoritması kullanacaktır. <br> - Sistem çıkışa 1 boyutlu görüntü verecektir.                              |
+| RGB Görüntüyü Siyah-Beyaza Çevirme    | - Sistem RGB uzayındaki renkli görüntüyü siyah-beyaz bir görüntüye çevirebilecektir.                              |
+| UART ile Sistemi PS ile Yönetme    | - Sistem UART haberleşme protokolünü kullanarak terminal arayüzünden PS aracılığıyla kontrol edilecektir.                             |
+| PS ve PL Kombine Edilmesi   | - Sistem hem PS hem de PL üzerinde çalışacaktır. <br> - Sistem AXI arayüzü ile PS ve PL arasında veri transferine imkan sunacaktır. <br> - Sistem PL’in video sinyallerini işleyip hızlandırıcı olarak çalışmasına izin verecektir. <br> - Sistem PS’in yönetici konumunda olup PL’i kontrol etmesine izin verecektir.   
+| Terminal Arayüzü  | - Sistem tüm konfigürasyon seçenekleri için tek bir arayüz sunacaktır. <br> - Sistem arayüzü hangi konfigürasyon seçeneklerinin mevcut olduğunu gösterecektir.   |
+| Performans   | - Sistem görüntüyü ekrana 2 saniyenin altında gecikme ile bastırabilecektir. <br> - Sistem 921.6k Baud hızıyla kullanıcıyla haberleşecektir. <br> - Sistem kullanıcının ani değişimler yapıp sistemin stabilitesini bozmasına izin vermeyecektir. |   
+| Güvenlik   | - Sistem kullanıcının görüntüleme tercihini seçerken sistemin sunduğundan farklı bir seçenekte bulunmasına izin vermeyecektir. <br> - Sistem kullanıcının görüntüleme tercihini değiştirirken sistemin sunduğundan farklı bir seçenekte bulunmasına izin vermeyecektir. <br> - Sistem gelen görüntüyü depolama biriminde saklamayacaktır. <br> - Sistem kullanıcının girişlerini saklamayacak ve asla paylaşmayacaktır. <br> - Sistem kullanıcının elde ettiği sonuçları başka bir kuruluşla asla paylaşmayacaktır.
 
-![image](https://github.com/samed12pqr/gomsis24/assets/165570990/e4517f39-f9f4-4140-9709-2e70f68db1f1)
+## Yapılıyor
 
-Sistem PS ile terminal ekranından UART ile kontrol edilecektir. Terminal burada GUI görevi üstlenecektir.
+| Başlık         | Maddeler                                                                 |
+|----------------|--------------------------------------------------------------------------|
+| HDMI Pass Through Çalışması  | - Laptop ekranındaki görüntü FPGA’den geçirilerek olduğu gibi harici bir monitörde yansıtılacak.                                |
+| Yüksek Çözünürlükte Video İşleyebilme   | - Sistem 1080p 60 Hz’e kadar video sinyallerini alabilir. <br> - Sistem 1080p 60 Hz’e kadar video sinyallerini görüntüleyebilir.
 
-![image](https://github.com/samed12pqr/gomsis24/assets/165570990/175d337e-41a6-4573-8f1d-12acf3edc4c6)
+## Tamamlandı
 
-Taslak Blok Diyagramı:
-
-![image](https://github.com/samed12pqr/gomsis24/assets/165570990/2cf303e4-304c-4906-8a6a-4ef39ed634a5)
-
-Demo Testi:
-
-![image](https://github.com/samed12pqr/gomsis24/assets/165570990/a7bb7f2b-3565-4a18-812f-5cfdd15812eb)
-
-Çalışmanı son hali:
-
-![image](https://github.com/samed12pqr/gomsis24/assets/165570990/d56e417d-7782-48c0-93ef-889a62abd6f5)
-
-Saat yönetim bloğu MMCM'den PLL'e geçirildi. Bitstream sorunu düzeltildi. hdmi_rx_txen portu aktifleştirildi.
-
+| Başlık         | Maddeler                                                                 |
+|----------------|--------------------------------------------------------------------------|
+| Gereksinim Karşılama  | - 1x Nexys Video FPGA Board <br> - 1x HDMI Kablo <br> - 1x HDMI to VGA Dönüştürücü <br> - 1x VGA Kablo <br> - 1x VGA Monitör <br> - 1x USB HUB <br> - 2x Micro-USB Kablo                               |
+| Risk Değerlendirmesi ve Demo Testi   | - Vivado’nun hazır IP’si dvi2rgb ile ilgili bilgi toplandı ve risk değerlendirmesi yapıldı. Ardından kart üzerinde bir demo projesi testi gerçekleştirildi. |
