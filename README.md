@@ -1,4 +1,4 @@
 # gomsis24
-VideoFX HDMI Output Display Project using FPGA
+FPGA'ler ile HDMI Görüntü İşleme Projesi
 
 Salih Yıldız 200207014
