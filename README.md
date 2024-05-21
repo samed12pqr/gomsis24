@@ -17,7 +17,8 @@ Taslak Blok Diyagramı:
 
 Demo Testi:
 
-![image](https://github.com/samed12pqr/gomsis24/assets/165570990/a7bb7f2b-3565-4a18-812f-5cfdd15812eb)
+![Scz5](https://github.com/samed12pqr/gomsis24/assets/165570990/c51ce03b-d46b-4473-8134-10455d40a0d5)
+
 
 Çalışmanı son hali:
 
